@@ -6,7 +6,7 @@ from django.conf.urls.defaults import patterns, include, url
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'microblog.views.home', name='home'),
+    url(r'^$', 'microblog.views.home', name='home'),
     # url(r'^microblog/', include('microblog.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
