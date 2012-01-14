@@ -36,13 +36,12 @@ a:hover{color:#ff6600;background-color:#eeeeee;text-decoration:underline;}
 }
 
 #MAIN_WRAPPER {
-	margin: 10px auto;
+	border-top: solid gray 1px;
 }
 
 #FOOT_WRAPPER {
 	clear: both;
 	text-align: center;
-	margin-top: 20px;
 	padding: 10px;
 	border-top: 1px solid #9cb8c6;
 }
@@ -75,11 +74,14 @@ a:hover{color:#ff6600;background-color:#eeeeee;text-decoration:underline;}
 }
 
 .side {
-	width: 240px;
+	width: 21%;
 }
 
 .main {
-	width: 730px;
+	width: 56%;
+	margin-left:0.9%;
+	border-left:solid gray 1px;
+	border-right:solid gray 1px;
 }
 
 .side_menu {

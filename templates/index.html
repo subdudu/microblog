@@ -2,67 +2,12 @@
 
 {% block title %}{{ title }}{% endblock %}
 
-{% block MAIN_WRAPPER %}
-<div class="wrapper">
-	<div id="TOP_NEWS" class="main column l">
-		<div class="bar">头条新闻</div>
-		<div class="wrapper">
-			<div class="wrapper l" style="width:400px;">
-			</div>
-			<div class="r" style="width: 320px;">
-			</div>
-			<div class="clear"></div>
-		</div>
+{% block LEFTSIDE %}{% endblock %}
+
+{% block MAIN %}{% endblock %}
+
+{% block RIGHTSIDE %}
+	<div class="column">
+		<div class="bar">安全工作倒计时</div>
 	</div>
-	<div id="side_panel_1" class="side r wrapper">
-		<div class="column">
-			<div class="bar">安全工作倒计时</div>
-		</div>
-		<div class="column">
-			<div class="bar">公告板</div>
-			<div class="p_wrapper" style="height:145px; overflow:hidden; position:relative;">
-			</div>
-	</div>
-	<div class="clear"></div>
-</div>
-<div class="clear column">
-	<div class="bar">图片新闻</div>
-	<div class="p_wrapper">
-	</div>
-</div>
-<div class="clear wrapper">
-	<div class="main l wrapper">
-		{% for al in post_lists %}
-		<div class="column {% cycle 'l clear' 'r' as flow %}" style="width:360px;">
-			<div class="bar">{{ al.category }}</div>
-		</div>
-		{% endfor %}
-		<div class="main l">
-			<div class="bar">友情链接</div>
-		</div>
-	</div>
-	<div class="side r wrapper">
-		<div class="column">
-			<div class="bar">最新博文</div>
-			<div class="p_wrapper">
-			</div>
-		</div>
-		<div class="column">
-			<div class="bar">博文精选</div>
-			<div class="p_wrapper">
-			</div>
-		</div>
-		<div class="column">
-			<div class="bar">软件更新</div>
-			<div class="p_wrapper">
-			</div>
-		</div>
-		<div class="column">
-			<div class="bar">新片速递</div>
-			<div class="p_wrapper">
-			</div>
-		</div>
-	</div>
-	<div class="clear"></div>
-</div>
 {% endblock %}
