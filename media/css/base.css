@@ -78,8 +78,7 @@ a:hover{color:#ff6600;background-color:#eeeeee;text-decoration:underline;}
 }
 
 .main {
-	width: 56%;
-	margin-left:0.9%;
+	margin:0 22%;
 	border-left:solid gray 1px;
 	border-right:solid gray 1px;
 }

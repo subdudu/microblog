@@ -29,14 +29,14 @@
 	</div>
 	<div id="MAIN_WRAPPER" class="wrapper">
 		{% block MAIN_WRAPPER %}
-		<div class="side wrapper l">l
+		<div class="side wrapper l">
 			{% block LEFTSIDE %}{% endblock %}
-		</div>
-		<div class="main wrapper l">m<br/>m<br/>m
-			{% block MAIN %}{% endblock %}
 		</div>
 		<div class="side r wrapper">
 			{% block RIGHTSIDE %}{% endblock %}
+		</div>
+		<div class="main wrapper">
+			{% block MAIN %}{% endblock %}
 		</div>
 		<div class="clear"></div>
 		{% endblock %}
