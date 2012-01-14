@@ -1,0 +1,4 @@
+<div>您的 IP 地址:{{ request.META.REMOTE_ADDR }}</div>
+<div>版权所有：黄金技术学校，Copyright&copy;2009-2010</div>
+<div>地址：襄樊市汉江北路516号 电话：(0710)3124654</div>
+<div>-＊-霏飞工作室设计制作-＊-</div>

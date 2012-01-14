@@ -1,0 +1,4 @@
+<div class="r" style="font-size:11px; background-image: url({{ STATIC_URL }}images/background1.png);">
+	<a href="/" style="padding:0 5px;">首页</a>|<a href="/books/" style="padding:0 5px;">电子图书</a>|<a href="/softwares/" style="padding:0 5px;">软件</a>|<a href="/movies/" style="padding-left:10px;">影视</a>|<a href="/admin/" style="padding:0px 5px;">后台管理</a>
+</div>
+<img class="r" src="{{ STATIC_URL }}images/background2.png" />

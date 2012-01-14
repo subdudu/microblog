@@ -1,0 +1,7 @@
+<ul>
+	<li><a href="/{{ module_name }}">首页</a></li>
+	{% for a in module_menu %}
+	<li><img src="{{ STATIC_URL }}images/navbar_separator.gif" /></li>
+	<li><a href="{{a.url}}">{{a.name}}</a></li>
+	{% endfor %}
+</ul>
