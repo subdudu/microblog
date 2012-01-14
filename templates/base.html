@@ -1,0 +1,45 @@
+{% load url from future %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE|default:"en-us" }}" xml:lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+<title>{% block title %}{{ title }}{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/base.css" />
+{% block extrastyle %}{% endblock %}
+<script src="{{ STATIC_URL }}js/jquery.js" type="text/javascript"></script>
+{% block extrajs %}{% endblock %}
+{% block extrahead %}{% endblock %}
+</head>
+{% load i18n %}
+<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
+	<div id="HEAD_WRAPPER">
+		{% block HEAD_WRAPPER %}
+		<div id="TOPBAR">
+			{% block TOPBAR %}{% include "topbar.pt" %}{% endblock %}
+		</div>
+		<div id="LOGOBAR">
+			{% block LOGOBAR %}<img src="{{ STATIC_URL }}images/logo.png" alt="武警黄金技术学校" />{% endblock %}
+		</div>
+		{% if main_menu %}
+		<div id="NAVBAR">
+			{% block NAVBAR %}{% include "navbar.pt" %}{% endblock %}
+		</div>
+		{% endif %}
+		{% endblock HEAD_WRAPPER %}
+	</div>
+	<div id="MAIN_WRAPPER" class="wrapper">
+		{% block MAIN_WRAPPER %}
+		<div class="main wrapper l">
+			{% block MAIN %}{% endblock %}
+		</div>
+		<div class="side r wrapper">
+			{% block SIDE %}{% endblock %}
+		</div>
+		<div class="clear"></div>
+		{% endblock %}
+	</div>
+	<div id="FOOT_WRAPPER">
+		{% block FOOT_WRAPPER %}{% include "footer.pt" %}{% endblock %}
+	</div>
+</body>
+</html>
