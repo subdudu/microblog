@@ -4,7 +4,13 @@
 
 {% block LEFTSIDE %}
 <div class="column">
-	<div class="bar">安全工作倒计时</div>
+	<div class="bar">
+		{% if user.is_authenticate %}
+			{% include "profile.pt" %}
+		{% else %}
+			{% include "login.form" %}
+		{% endif %}
+	</div>
 </div>
 {% endblock %}
 
