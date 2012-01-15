@@ -6,9 +6,9 @@
 <div class="column">
 	<div class="bar">
 		{% if user.is_authenticate %}
-			{% include "profile.pt" %}
+			{% include "users/profile.pt" %}
 		{% else %}
-			{% include "login.form" %}
+			{% include "users/login.form" %}
 		{% endif %}
 	</div>
 </div>
