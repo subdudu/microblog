@@ -4,8 +4,7 @@
 	<p>{{ form.password.label_tag }}{{ form.password }}</p>
 	<p style="text-align:center; margin-top:10px">
 		<input type="submit" value="登录" />
-		&nbsp;&nbsp;
-		<a href="/register">注册</a>
 	</p>
 	<input type="hidden" name="next" value="{{ next }}" />
 </form>
+<p>没有用户名？赶紧<a href="/register">注册</a>吧！</p>

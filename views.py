@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.utils.translation import ugettext_lazy as _
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template.context import RequestContext
 from django.template import loader
 from django.contrib.auth.forms import AuthenticationForm
