@@ -1,10 +1,8 @@
-<form method="post" action="login">
+<form method="post" action="/users/login/" style="font-size:0.6em;">
 	{% csrf_token %}
+	{{ form.non_field_errors }}
 	<p>{{ form.username.label_tag }}{{ form.username }}</p>
 	<p>{{ form.password.label_tag }}{{ form.password }}</p>
-	<p style="text-align:center; margin-top:10px">
-		<input type="submit" value="登录" />
-	</p>
+	<p style="text-align:center;"><input type="submit" value="登录" /></p>
 	<input type="hidden" name="next" value="{{ next }}" />
 </form>
-<p>没有用户名？赶紧<a href="/register">注册</a>吧！</p>

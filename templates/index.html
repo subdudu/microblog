@@ -4,13 +4,7 @@
 
 {% block LEFTSIDE %}
 <div class="column">
-	<div class="bar">
-		{% if user.is_authenticate %}
-			{% include "users/profile.pt" %}
-		{% else %}
-			{% include "users/login.form" %}
-		{% endif %}
-	</div>
+	{% load gen_form %}{% generate_authentication_form %}
 </div>
 {% endblock %}
 

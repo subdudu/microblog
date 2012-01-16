@@ -1,0 +1,9 @@
+<div class="bar">
+	{% if user.is_authenticated %}
+	<div>{{ user.username }}</div>
+	<div><a href="/users/logout/">退出登录</a></div>
+	{% else %}
+		{% include "users/login.form" %}
+		<p class="footnote">还没有用户名？<a href="/users/register">赶紧注册吧！</a></p>
+	{% endif %}
+</div>

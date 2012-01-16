@@ -3,20 +3,12 @@ from django.utils.translation import ugettext_lazy as _
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template.context import RequestContext
 from django.template import loader
-from django.contrib.auth.forms import AuthenticationForm
 
 
 
 def home(request):
-	if request.user.is_authenticated():
-		c = RequestContext(request, {
-				'title': u'武警黄金技术学校欢迎您！',
-			})
-	else:
-		form = AuthenticationForm()
-		c = RequestContext(request, {
-				'title': u'武警黄金技术学校欢迎您！',
-				'form': form,
-				'next': '/',
-			})
+	c = RequestContext(request, {
+			'title': u'指挥部教导大队博客主页！',
+			'user': request.user,
+		})
 	return HttpResponse(loader.get_template('index.html').render(c))
