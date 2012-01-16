@@ -1,0 +1,8 @@
+{% if user.is_authenticated %}
+<form>{% csrf_token %}
+	<input name="content" type="textarea" />
+	<input type="sumit" value="提交" />
+</form>
+{% else %}
+<img src="" style="width:100%;" />
+{% endif %}
