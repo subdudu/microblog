@@ -10,26 +10,17 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
 
 def register(request):
-	if request.user.is_authenticated():
-		return render_to_response('register.html', {
-				'has_account': True,
-			})
 	form = UserCreationForm()
 	if request.method == 'POST':
 		form = UserCreationForm(request.POST)
 		if form.is_valid():
-			user = User.objects.create_user(
-				form.cleaned_data['username'],
-				'',
-				form.cleaned_data['password1'],
-				)
-			user.save()
+			user = form.save()
 			return HttpResponseRedirect("/")
 	else:
 		form = UserCreationForm()
 
 	c = RequestContext(request, {
-			'title': u'武警黄金技术学校欢迎您！',
+			'title': u'新用户注册！',
 			'form': form,
 		})
 	return HttpResponse(loader.get_template('users/register.html').render(c))
