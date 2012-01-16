@@ -44,6 +44,7 @@ a:hover{color:#ff6600;background-color:#eeeeee;text-decoration:underline;}
 	text-align: center;
 	padding: 10px;
 	border-top: 1px solid #9cb8c6;
+	font-size: 0.8em;
 }
 
 #TOPBAR {
@@ -71,6 +72,10 @@ a:hover{color:#ff6600;background-color:#eeeeee;text-decoration:underline;}
 #TOPNAVBAR ul li{
 	padding: 0 3px;
 	display: inline;
+}
+
+.footnote {
+	font-size: 0.8em;
 }
 
 .side {
