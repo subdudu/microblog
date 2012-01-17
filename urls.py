@@ -16,4 +16,5 @@ urlpatterns = patterns('',
 
 	url(r'^$', 'microblog.views.home', name='home'),
 	url(r'^users/', include('users.urls')),
+	url(r'^posts/', include('posts.urls')),
 )

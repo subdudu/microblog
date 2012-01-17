@@ -2,8 +2,10 @@
 
 {% block title %}{{ title }}{% endblock %}
 
+{% block extrajs %}<script src="{{ STATIC_URL }}js/posts.js" type="text/javascript"></script>{% endblock %}
+
 {% block LEFTSIDE %}
-<div class="column">
+<div class="column" style="border-bottom:solid gray 1px;">
 	{% load gen_form %}{% generate_authentication_form %}
 </div>
 {% endblock %}
@@ -13,7 +15,7 @@
 	{% include 'posts/writing.pt' %}	
 </div>
 <div class="column">
-	{% include 'posts/updating.pt' %}	
+	<div id="realtime_posts"></div>
 </div>
 {% endblock %}
 

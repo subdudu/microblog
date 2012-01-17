@@ -14,7 +14,7 @@ class Post(models.Model):
 			verbose_name=_(u"发布者"),
 			editable = False,
 		)
-	last_mod_date = models.DateField(verbose_name=_(u"修改日期"),
+	last_mod_time = models.DateTimeField(verbose_name=_(u"最后更改时间"),
 			auto_now=True,
 		)
 	publicly = models.BooleanField(verbose_name=_(u"是否公开给所有人"),
