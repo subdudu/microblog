@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
+import json
 from django.utils.translation import ugettext_lazy as _
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template.context import RequestContext
 from django.template import loader
-from django.core import serializers
-from posts.models import Post
-from posts.forms import PostForm
+from models import Post
+from forms import PostForm
+from core.serializer.json import AjaxSerializer
 
 
 
@@ -29,5 +30,6 @@ def realtime_posts(request):
 	'''
 	max = 20
 	posts = Post.objects.filter(publicly=True).order_by('last_mod_time')[:max]
-	data = serializers.serialize("json", posts, ensure_ascii=False)
-	return HttpResponse(data)
+	srl = AjaxSerializer()
+	data = srl.serialize(posts)
+	return HttpResponse(data, mimetype='application/json')

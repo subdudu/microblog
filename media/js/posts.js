@@ -1,6 +1,7 @@
 $(document).ready(function() {
-	$.get("/posts/realtime_posts", function(data, status, xhr) {
-		data = eval("(" + data + ")");
-		$("#realtime_posts").html(data);
+	$.getJSON("/posts/realtime_posts", function(data, status, xhr) {
+		$("#realtime_posts").html(data[0].content);
 	});
 });
+
+var show_posts = function(posts) {}

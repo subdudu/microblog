@@ -22,4 +22,4 @@ class Post(models.Model):
 		)
 
 	def __unicode__(self):
-		return self.id
+		return unicode(self.id)
