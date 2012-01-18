@@ -1,5 +1,0 @@
-{'posts': [
-{% for p in posts %}
-{'content': p.content, 'created_by': p.created_by, 'last_mod_time': p.last_mod_time,  'publicly': p.publicly}{% if not forloop.last %},{% endif %}
-{% endfor %}
-]}
