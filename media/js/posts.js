@@ -1,13 +1,18 @@
 $(document).ready(function() {
-	$.getJSON("/posts/realtime_posts", function(data, status, xhr) {
-		$("#realtime_posts").html(show_posts(data));
+	$.getJSON("/posts/latest_posts", function(data, status, xhr) {
+		var s = "";
+		for (p in data) {
+			s += "<div><span>" + data[p].content + "</span><span>" + data[p].last_mod_time + "</span></div>";
+		};
+		$("#realtime_posts").html(s);
+		setTimeout(add_realtime_posts, 1);
 	});
 });
 
-var show_posts = function(posts) {
-	var s = "";
-	for (p in posts) {
-		s += "<div><span>" + posts[p].content + "</span><span>" + posts[p].last_mod_time + "</span></div>";
-	}
-	return s;
+function add_realtime_posts() {
+	$.getJSON("/posts/realtime_posts", function(data, status, xhr) {
+			var s = "";
+			$("#realtime_posts div:first").before(s);
+			setTimeout("add_realtime_posts()", 1000);
+	})
 }

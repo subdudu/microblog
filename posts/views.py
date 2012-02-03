@@ -28,6 +28,16 @@ def add(request):
 def realtime_posts(request):
 	'''return posts
 	'''
+	posts = Post.objects.filter(publicly=True).order_by('last_mod_time')[:1]
+	srl = AjaxSerializer()
+	data = srl.serialize(posts)
+	return HttpResponse(data, mimetype='application/json')
+
+
+
+def latest_posts(request):
+	'''return posts
+	'''
 	max = 20
 	posts = Post.objects.filter(publicly=True).order_by('last_mod_time')[:max]
 	srl = AjaxSerializer()
