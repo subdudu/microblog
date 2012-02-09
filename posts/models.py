@@ -15,7 +15,8 @@ class Post(models.Model):
 			editable = False,
 		)
 	last_mod_time = models.DateTimeField(verbose_name=_(u"最后更改时间"),
-			auto_now=True,
+			editable=False,
+			blank=True,
 		)
 	publicly = models.BooleanField(verbose_name=_(u"是否公开给所有人"),
 			default=False,

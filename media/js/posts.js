@@ -11,8 +11,11 @@ $(document).ready(function() {
 
 function add_realtime_posts() {
 	$.getJSON("/posts/realtime_posts", function(data, status, xhr) {
-			var s = "";
-			$("#realtime_posts div:first").before(s);
-			setTimeout("add_realtime_posts()", 1000);
+		var s = "";
+		for (p in data) {
+			s += "<div><span>" + data[p].content + "</span><span>" + data[p].last_mod_time + "</span></div>";
+		};
+		$("#realtime_posts div:first").before(s);
+		setTimeout("add_realtime_posts()", 3000);
 	})
 }
