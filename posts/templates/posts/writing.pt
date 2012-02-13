@@ -1,7 +1,7 @@
 {% if user.is_authenticated %}
-<form action="/posts/add/" method="post">{% csrf_token %}
+<form id="form_post_ajax" action="/posts/add/" method="post">{% csrf_token %}
 	<p class="tm"><textarea id="id_content" name="content" cols="40" rows="10"></textarea></p>
-	<p class="tm"><input type="submit" value="提交" /></p>
+	<p class="tm"><input type="button" id="id_commit" name="commit" value="提交" /></p>
 </form>
 {% else %}
 <img src="" style="width:100%;" />
