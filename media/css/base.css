@@ -27,7 +27,7 @@ img {
 }
 
 a{text-decoration:none;}
-a:link{color:#000000;}
+a:link{color:#0000FF;}
 a:visited{color:#000000;}
 a:active{color:#000000;}
 a:hover{color:#ff6600;background-color:#eeeeee;text-decoration:underline;}
